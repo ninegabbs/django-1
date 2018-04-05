@@ -1,0 +1,10 @@
+<!-- checking for errors with if-else statements -->
+{% if latest_question_list %}
+<ul>
+	{% for i in latest_question_list %}
+		<li><a href="{% url 'detail' i.pk %}">{{ i.question_text }}</a></li>
+	{% endfor %}
+</ul>
+{% else %}
+	<p>No polls are available</p>
+{% endif %}
